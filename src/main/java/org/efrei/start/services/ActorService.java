@@ -30,13 +30,12 @@ public class ActorService {
         actor.setFirstname(createActor.getFirstName());
         actor.setName(createActor.getName());
 
-        // Récupérer le film par son ID et vérifier qu'il existe
         Movie movie = movieService.findById(createActor.getMovieId());
         if (movie != null) {
-            actor.setMovie(movie);  // Associer le film à l'acteur
+            actor.setMovie(movie);
         }
 
-        repository.save(actor);  // Sauvegarder l'acteur
+        repository.save(actor);
     }
 
     public Actor findById(String id) {

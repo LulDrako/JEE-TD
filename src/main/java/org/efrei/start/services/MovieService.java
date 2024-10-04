@@ -33,8 +33,8 @@ public class MovieService {
     public void create(CreateMovie createMovie) {
         Movie movie = new Movie();
         movie.setTitle(createMovie.getTitle());
-        movie.setResume(createMovie.getResume());  // Ajout du champ resume
-        movie.setPersonnage(createMovie.getPersonnage());  // Ajout du champ personnage
+        movie.setResume(createMovie.getResume());
+        movie.setPersonnage(createMovie.getPersonnage());
         movie.setCategory(createMovie.getCategory());
         repository.save(movie);
     }

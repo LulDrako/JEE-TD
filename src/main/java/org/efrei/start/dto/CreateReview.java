@@ -3,10 +3,9 @@ package org.efrei.start.dto;
 public class CreateReview {
 
     private String comment;
-    private int stars;  // Les étoiles (note du film)
+    private int stars;
     private String movieId;
 
-    // Getters et Setters
     public String getComment() {
         return comment;
     }

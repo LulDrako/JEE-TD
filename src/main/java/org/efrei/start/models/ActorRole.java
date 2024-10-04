@@ -10,22 +10,21 @@ public class ActorRole {
     private String id;
 
     @Column(nullable = false)
-    private String roleName;  // Nom du rôle joué par l'acteur
+    private String roleName; 
 
     @ManyToOne
     @JoinColumn(name = "actor_id")
-    private Actor actor;  // L'acteur qui joue le rôle
+    private Actor actor;
 
     @ManyToOne
     @JoinColumn(name = "movie_id")
-    private Movie movie;  // Le film dans lequel le rôle est joué
+    private Movie movie;
 
     @Column(nullable = false)
-    private boolean isMainRole;  // Indique si c'est un rôle principal ou non
+    private boolean isMainRole;
 
     public ActorRole() {}
 
-    // Getters et Setters
     public String getId() {
         return id;
     }

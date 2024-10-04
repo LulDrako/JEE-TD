@@ -15,7 +15,7 @@ public class Actor {
     private String firstname;
 
     @ManyToOne
-    @JoinColumn(name = "movie_id")  // Le mapping pour le film
+    @JoinColumn(name = "movie_id")
     private Movie movie;
 
     public Actor(String name, String firstname) {

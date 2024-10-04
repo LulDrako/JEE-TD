@@ -12,16 +12,16 @@ public class Review {
     private String id;
 
     @Column(nullable = false)
-    private String comment;  // Le commentaire sur le film
+    private String comment;
 
     @Min(1)
     @Max(5)
     @Column(nullable = false)
-    private int stars;  // Nombre d'étoiles entre 1 et 5
+    private int stars;
 
     @ManyToOne
     @JoinColumn(name = "movie_id")
-    private Movie movie;  // Film associé à la critique
+    private Movie movie;
 
     public Review() {}
 

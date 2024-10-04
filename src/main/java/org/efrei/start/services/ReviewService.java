@@ -20,22 +20,18 @@ public class ReviewService {
         this.movieService = movieService;
     }
 
-    // READ ALL
     public List<Review> findAll() {
         return repository.findAll();
     }
 
-    // READ BY ID
     public Review findById(String id) {
         return repository.findById(id).orElse(null);
     }
 
-    // CREATE : Accept Review instead of CreateReview
     public void create(Review review) {
         repository.save(review);
     }
 
-    // UPDATE
     public void update(String id, Review updatedReview) {
         Review existingReview = findById(id);
         if (existingReview != null) {
@@ -45,7 +41,6 @@ public class ReviewService {
         }
     }
 
-    // DELETE
     public void deleteById(String id) {
         repository.deleteById(id);
     }

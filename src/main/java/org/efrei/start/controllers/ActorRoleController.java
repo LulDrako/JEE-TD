@@ -21,20 +21,17 @@ public class ActorRoleController {
         this.service = service;
     }
 
-    // CREATE
     @PostMapping
     public ResponseEntity<?> create(@RequestBody CreateActorRole createActorRole) {
         service.create(createActorRole);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    // READ ALL
     @GetMapping
     public ResponseEntity<List<ActorRole>> findAll() {
         return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
     }
 
-    // READ BY ID
     @GetMapping("/{id}")
     public ResponseEntity<ActorRole> findById(@PathVariable String id) {
         ActorRole actorRole = service.findById(id);
@@ -44,14 +41,12 @@ public class ActorRoleController {
         return new ResponseEntity<>(actorRole, HttpStatus.OK);
     }
 
-    // UPDATE
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@PathVariable String id, @RequestBody CreateActorRole updatedRole) {
         service.update(id, updatedRole);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    // DELETE
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteById(@PathVariable String id) {
         service.deleteById(id);

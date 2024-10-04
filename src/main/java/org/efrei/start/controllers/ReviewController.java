@@ -25,7 +25,6 @@ public class ReviewController {
         this.movieService = movieService;
     }
 
-    // CREATE
     @PostMapping
     public ResponseEntity<?> create(@RequestBody CreateReview createReview) {
         Review review = new Review();
@@ -41,13 +40,11 @@ public class ReviewController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    // READ ALL
     @GetMapping
     public ResponseEntity<List<Review>> findAll() {
         return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
     }
 
-    // READ BY ID
     @GetMapping("/{id}")
     public ResponseEntity<Review> findById(@PathVariable String id) {
         Review review = service.findById(id);
@@ -57,7 +54,6 @@ public class ReviewController {
         return new ResponseEntity<>(review, HttpStatus.OK);
     }
 
-    // UPDATE
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@PathVariable String id, @RequestBody CreateReview updatedReview) {
         Review review = new Review();
@@ -73,7 +69,6 @@ public class ReviewController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    // DELETE
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteById(@PathVariable String id) {
         service.deleteById(id);

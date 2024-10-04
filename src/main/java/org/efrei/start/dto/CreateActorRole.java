@@ -6,7 +6,6 @@ public class CreateActorRole {
     private String actorId;
     private String movieId;
 
-    // Getters et setters
     public String getRoleName() {
         return roleName;
     }
