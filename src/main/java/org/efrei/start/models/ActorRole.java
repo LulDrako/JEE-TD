@@ -10,7 +10,7 @@ public class ActorRole {
     private String id;
 
     @Column(nullable = false)
-    private String roleName; 
+    private String roleName;
 
     @ManyToOne
     @JoinColumn(name = "actor_id")
@@ -21,7 +21,7 @@ public class ActorRole {
     private Movie movie;
 
     @Column(nullable = false)
-    private boolean isMainRole;
+    private boolean mainRole;  // Note que j'utilise 'mainRole'
 
     public ActorRole() {}
 
@@ -57,11 +57,11 @@ public class ActorRole {
         this.movie = movie;
     }
 
-    public boolean isMainRole() {
-        return isMainRole;
+    public boolean getMainRole() {
+        return mainRole;
     }
 
     public void setMainRole(boolean mainRole) {
-        isMainRole = mainRole;
+        this.mainRole = mainRole;
     }
 }

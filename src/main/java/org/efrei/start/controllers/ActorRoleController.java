@@ -23,6 +23,7 @@ public class ActorRoleController {
 
     @PostMapping
     public ResponseEntity<?> create(@RequestBody CreateActorRole createActorRole) {
+        System.out.println("mainRole: " + createActorRole.isMainRole()); // Vérification ici
         service.create(createActorRole);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

@@ -2,7 +2,7 @@ package org.efrei.start.dto;
 
 public class CreateActorRole {
     private String roleName;
-    private boolean isMainRole;
+    private boolean mainRole;
     private String actorId;
     private String movieId;
 
@@ -15,11 +15,11 @@ public class CreateActorRole {
     }
 
     public boolean isMainRole() {
-        return isMainRole;
+        return mainRole;
     }
 
-    public void setMainRole(boolean isMainRole) {
-        this.isMainRole = isMainRole;
+    public void setMainRole(boolean mainRole) {
+        this.mainRole = mainRole;
     }
 
     public String getActorId() {
